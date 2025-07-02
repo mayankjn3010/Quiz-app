@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Interview Quiz System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>Interview Quiz Admin</h1>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </header>
+
+        
+        <div id="blockSelection" class="step-container">
+            <h2>Select Quiz Topics (Choose 3-4 blocks)</h2>
+            <div id="blocksGrid" class="blocks-grid">
+             
+            </div>
+            <div class="difficulty-selection">
+                <label for="difficulty">Quiz Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <button id="createQuizBtn" class="create-quiz-btn" disabled>Create Quiz</button>
+        </div>
+
+        <div id="quizCreated" class="step-container" style="display: none;">
+            <h2>Quiz Created Successfully!</h2>
+            <div id="selectedBlocks" class="selected-blocks"></div>
+            <button id="sendQuizBtn" class="send-quiz-btn">Send Quiz</button>
+        </div>
+
+      
+        <div id="sendQuizSection" class="step-container" style="display: none;">
+            <h2>Send Quiz to Candidates</h2>
+            <div class="email-input-section">
+                <div class="form-group">
+                    <label for="candidateEmail">Candidate Email:</label>
+                    <input type="email" id="candidateEmail" placeholder="Enter candidate email">
+                    <button id="addEmailBtn">Add Email</button>
+                </div>
+                <div id="emailList" class="email-list">
+                    <h3>Selected Candidates:</h3>
+                    <ul id="emailListItems"></ul>
+                </div>
+                <button id="sendToSelectedBtn" class="send-to-selected-btn" disabled>Send Quiz to Selected</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

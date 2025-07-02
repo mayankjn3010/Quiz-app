@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Quiz</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  
+    <div id="entryPopup" class="popup-overlay">
+        <div class="popup-content">
+            <h2>Interview Quiz</h2>
+            <p>Enter quiz. Once entered, you need to completely follow the instructions, and attempt and submit.</p>
+            <div class="popup-buttons">
+                <button id="enterQuizBtn" class="btn-primary">Yes</button>
+                <button id="cancelQuizBtn" class="btn-secondary">No</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="instructionsPage" class="instructions-container" style="display: none;">
+        <div class="timer-container">
+            <div id="instructionTimer" class="timer">05:00</div>
+        </div>
+        <div class="instructions-content">
+            <h1>Quiz Instructions</h1>
+            <div class="instructions-list">
+                <h3>Please read the following instructions carefully:</h3>
+                <ul>
+                    <li>This quiz contains multiple-choice questions</li>
+                    <li>Each question has 4 options, select the most appropriate answer</li>
+                    <li>You can navigate between questions using Previous/Next buttons</li>
+                    <li>Once the timer ends, the quiz will be automatically submitted</li>
+                    <li>You can manually submit the quiz anytime using the Submit button</li>
+                    <li>Make sure you have a stable internet connection</li>
+                    <li>Do not refresh or close the browser tab during the quiz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="quizInterface" class="quiz-container" style="display: none;">
+        <div class="quiz-header">
+            <div id="quizTimer" class="timer">30:00</div>
+            <h2 id="quizTitle">Loading Quiz...</h2>
+        </div>
+        
+        <div class="quiz-content">
+            <div class="question-sidebar">
+                <h3>Questions</h3>
+                <div id="questionNav" class="question-nav">
+                    <!-- Question navigation will be generated here -->
+                </div>
+            </div>
+            
+            <div class="question-area">
+                <div id="questionContainer">
+                    <div class="question-header">
+                        <span id="questionNumber">Question 1 of 10</span>
+                    </div>
+                    <div id="questionText" class="question-text">
+                        Loading question...
+                    </div>
+                    <div id="optionsContainer" class="options-container">
+                        <!-- Options will be generated here -->
+                    </div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button id="prevBtn" class="nav-btn" disabled>Previous</button>
+                    <button id="nextBtn" class="nav-btn">Next</button>
+                    <button id="submitQuizBtn" class="submit-btn">Submit Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="submitPopup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <h2>Submit Quiz</h2>
+            <p>Are you sure you want to submit your quiz? This action cannot be undone.</p>
+            <div class="popup-buttons">
+                <button id="confirmSubmitBtn" class="btn-primary">Submit</button>
+                <button id="cancelSubmitBtn" class="btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="autoSubmitPopup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <h2>Time's Up!</h2>
+            <p>Your quiz time has ended. The quiz will be submitted automatically.</p>
+            <button id="autoSubmitBtn" class="btn-primary">Submit Quiz</button>
+        </div>
+    </div>
+
+    <div id="congratulationsPage" class="congratulations-container" style="display: flex;">
+        <div class="congratulations-content">
+            <h1>🎉 Congratulations!</h1>
+            <p>You have successfully completed the interview quiz.</p>
+            
+            <p>Thank you for taking the time to complete this assessment. We will review your responses and get back to you soon.</p>
+        </div>
+    </div>  
+    <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Loading quiz...</p>
+    </div>
+    <script src="/quiz.js"></script>
+</body>
+</html>
